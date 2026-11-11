@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         await navigator.clipboard.writeText(fullUrl);
         const originalText = btn.innerHTML;
-        btn.innerHTML = '<span>Copied! ✓</span>';
+        btn.innerHTML = '<span><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7"/></svg><span>Copied</span></span>';
         setTimeout(() => { btn.innerHTML = originalText; }, 2000);
       } catch (err) {
         prompt('Share link:', fullUrl);
