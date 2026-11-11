@@ -364,4 +364,203 @@ a{color:inherit;text-decoration:none}
 <dl class="contact"><div><dt class="mono">Web</dt><dd><a href="https://wordlordmedia.com">wordlordmedia.com</a></dd></div>
 <div><dt class="mono">Phone</dt><dd><a href="tel:+917973575656">+91 79735 75656</a></dd></div>
 <div><dt class="mono">Email</dt><dd><a href="mailto:support@wordlordmedia.com">support@wordlordmedia.com</a></dd></div>
-<div><dt class="mono">Instagram</dt><dd><a href="https://instagram.com/wordlordmedia">@wordlordmedia</a></dd></div></dl></div><span></span></section><script src="studio.js"></script></body></html>
+<div><dt class="mono">Instagram</dt><dd><a href="https://instagram.com/wordlordmedia">@wordlordmedia</a></dd></div></dl></div><span></span></section><script src="studio.js"></script>
+<!-- WordLord Download Gateway Modal -->
+<div id="wl-download-overlay" class="wl-overlay noprint">
+  <div class="wl-modal">
+    <div class="wl-modal-badge">
+      <img src="assets/wl-logo.png" alt="WordLord Media" class="wl-modal-logo">
+      <span>Official Casebook & Index</span>
+    </div>
+    <h2>Download WordLord Media Portfolio</h2>
+    <p>Get the verified offline PDF casebook containing live platform architectures, metrics, and case studies.</p>
+    
+    <div class="wl-cards">
+      <a href="WordLord_Websites_Portfolio.pdf" download="WordLord_Websites_Portfolio.pdf" class="wl-dl-card">
+        <div class="wl-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12"/></svg>
+        </div>
+        <div class="wl-card-info">
+          <b>Websites & Platforms PDF</b>
+          <span>16 Verified Live Deployments · 23 MB</span>
+        </div>
+        <span class="wl-btn-arrow">Download ↗</span>
+      </a>
+
+      <a href="WordLord_Social_Portfolio.pdf" download="WordLord_Social_Portfolio.pdf" class="wl-dl-card">
+        <div class="wl-card-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12"/></svg>
+        </div>
+        <div class="wl-card-info">
+          <b>Social Media & Growth PDF</b>
+          <span>20 Managed Accounts & Case Studies · 6.6 MB</span>
+        </div>
+        <span class="wl-btn-arrow">Download ↗</span>
+      </a>
+    </div>
+
+    <div class="wl-modal-footer">
+      <button type="button" id="wl-dismiss-btn" class="wl-dismiss-btn">Continue to live interactive preview ›</button>
+      <span class="wl-legal">WordLord Media · Verified Index · Confidential</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.wl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(8, 10, 18, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: wlFadeIn 0.35s ease-out forwards;
+}
+.wl-modal {
+  background: #0f121d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  max-width: 540px;
+  width: 100%;
+  padding: 36px 32px 28px;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 80px rgba(30, 63, 216, 0.18);
+  text-align: center;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+}
+.wl-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 63, 216, 0.25);
+  border: 1px solid rgba(30, 63, 216, 0.5);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9cb4ff;
+}
+.wl-modal-logo {
+  height: 14px;
+  width: auto;
+}
+.wl-modal h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.wl-modal p {
+  font-size: 13.5px;
+  color: #98a1b3;
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+.wl-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.wl-dl-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.wl-dl-card:hover {
+  background: rgba(30, 63, 216, 0.2);
+  border-color: #1E3FD8;
+  transform: translateY(-1px);
+}
+.wl-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #1E3FD8;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+.wl-card-info {
+  flex: 1;
+}
+.wl-card-info b {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.wl-card-info span {
+  font-size: 11px;
+  color: #8a94a6;
+}
+.wl-btn-arrow {
+  font-size: 12px;
+  font-weight: 600;
+  color: #799aff;
+}
+.wl-modal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.wl-dismiss-btn {
+  background: none;
+  border: none;
+  color: #647087;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.15s;
+}
+.wl-dismiss-btn:hover {
+  color: #c1cad9;
+  text-decoration: underline;
+}
+.wl-legal {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@keyframes wlFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var overlay = document.getElementById("wl-download-overlay");
+  var dismissBtn = document.getElementById("wl-dismiss-btn");
+  if (overlay && dismissBtn) {
+    dismissBtn.addEventListener("click", function() {
+      overlay.style.display = "none";
+    });
+  }
+});
+</script>
+
+</body></html>
