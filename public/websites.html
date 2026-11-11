@@ -1,0 +1,457 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>WordLord Media — Websites</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500&family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Hanken+Grotesk:wght@400;500;600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="studio.css"><style>:root{--cobalt:#1E3FD8}
+:root{--ink:#16161a;--mute:#6f6c66;--line:#ddd6c8;--paper:#f6f1e8;--h2:40px;--body-size:12.5px;--title-font:'Instrument Serif',serif;--body-font:'Geist',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2b2b2e;font-family:var(--body-font);padding-top:14px;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'Instrument Sans',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.005em}
+.page{width:297mm;height:210mm;margin:0 auto 10mm;overflow:hidden;position:relative;background:var(--paper);break-after:page}
+.page:last-child{break-after:auto}
+
+/* brand surfaces: cover, end, sidebar */
+.brand,.side{background:var(--cobalt);color:#fff}
+.brand::before,.side::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.09) .6px,transparent .7px);background-size:3px 3px}
+.logo{width:64px;display:block;position:relative}
+.logo.big{width:104px}
+
+.cover,.end{padding:16mm 18mm;display:grid;grid-template-rows:auto 1fr auto}
+.cv-main{align-self:center;position:relative;max-width:150mm}
+.cv-main .mono{color:rgba(255,255,255,.7)}
+.cover h1,.end h1{font-family:var(--title-font);font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-.01em;margin:5mm 0 4mm}
+.cover p{font-size:calc(var(--body-size) + .5px);line-height:1.55;color:rgba(255,255,255,.82);max-width:110mm}
+.strip{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+.strip img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:3px;box-shadow:0 10px 24px -12px rgba(0,0,20,.6)}
+.contact{display:grid;grid-template-columns:repeat(2,auto);gap:5mm 14mm;margin-top:8mm;justify-content:start}
+.contact dt{color:rgba(255,255,255,.65);margin-bottom:1.5mm}
+.contact dd{font-size:14px}
+
+/* site pages */
+.site,.index{display:grid;grid-template-columns:52mm 1fr}
+.side{position:relative;padding:12mm 8mm 10mm;display:flex;flex-direction:column;gap:12mm}
+.idx{list-style:none;counter-reset:n;display:grid;gap:2mm;position:relative;font:500 10.5px 'Instrument Sans',sans-serif}
+.idx li{counter-increment:n;color:rgba(255,255,255,.55);display:flex;gap:2.5mm;white-space:nowrap}
+.idx li::before{content:counter(n,decimal-leading-zero);font-family:var(--title-font);font-size:11px;opacity:.6;min-width:4mm}
+.idx li.on{color:#fff;font-weight:500}
+.side .foot{margin-top:auto;color:rgba(255,255,255,.6);position:relative}
+
+.site main{padding:9mm 12mm 10mm 11mm;display:flex;flex-direction:column;gap:5mm;min-height:0}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:3mm;color:var(--mute)}
+
+/* page head: big brand numeral, name, visit button */
+.head{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:6mm;padding-bottom:4mm;border-bottom:1px solid var(--line)}
+.num{display:flex;flex-direction:column;align-items:flex-start;line-height:1;color:var(--cobalt)}
+.num b{font-family:var(--title-font);font-weight:400;font-size:calc(var(--h2) * 1.55);line-height:.8;letter-spacing:-.03em}
+.num .mono{color:var(--mute);margin-top:2mm}
+.who{display:flex;flex-direction:column;gap:1.6mm;min-width:0}
+.who .tag{color:var(--cobalt)}
+.who h2{font-family:var(--title-font);font-weight:400;font-size:var(--h2);line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.who p{font-size:var(--body-size);color:var(--mute);line-height:1.4}
+.visit{display:inline-flex;align-items:center;gap:2.5mm;background:var(--cobalt);color:#fff;border-radius:999px;padding:2.4mm 3mm 2.4mm 5mm;font:600 12.5px 'Instrument Sans',sans-serif;letter-spacing:-.005em;white-space:nowrap}
+.visit .mono{font:500 12px 'Instrument Sans',sans-serif;opacity:.7;color:#fff}
+.visit i{font-style:normal;display:grid;place-items:center;width:6mm;height:6mm;border-radius:50%;background:rgba(255,255,255,.18);font-size:11px}
+
+
+.shots { flex:1; min-height:0; display:grid; grid-template-columns:1fr auto; grid-template-rows:1fr 1fr; gap:4mm; grid-template-areas:"hero phone" "sec phone"; }
+.shot { border-radius:6px; overflow:hidden; background:#111; box-shadow:0 18px 36px -22px rgba(20,18,14,.55); border:1px solid rgba(0,0,0,.1); display:flex; flex-direction:column; position:relative; }
+.shot img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; flex:1; }
+.hero { grid-area:hero; }
+.hero img { aspect-ratio:auto; }
+.sec { grid-area:sec; }
+.phone { grid-area:phone; height:100%; aspect-ratio:402/874; position:relative; border-radius:34px; padding:3.5px; background:#08080a;
+  box-shadow:0 0 0 1px #5d5d63,0 0 0 1.8px #b9b9bf,0 0 0 2.6px #6f6f75,0 34px 50px -30px rgba(20,18,14,.8),0 12px 18px -14px rgba(20,18,14,.45); }
+.phone .screen { width:100%; height:100%; border-radius:30.5px; overflow:hidden; background:var(--status-bg,#fff); display:flex; flex-direction:column; position:relative; }
+.phone img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; flex:1; }
+
+
+.status { flex:none; height:26px; position:relative; display:flex; align-items:center; justify-content:space-between; padding:2px 18px 0 22px; background:var(--status-bg,#fff); color:var(--status-ink,#111); }
+.status .time { font:600 9px/1 "Instrument Sans",sans-serif; letter-spacing:-.01em; width:28px; }
+.status .island { position:absolute; left:50%; top:5px; transform:translateX(-50%); width:31%; height:15px; background:#000; border-radius:999px; box-shadow:inset 0 0 0 .5px rgba(255,255,255,.07); }
+.status .island::after { content:""; position:absolute; right:9%; top:50%; width:6px; height:6px; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle at 35% 35%,#3a4a6a 0 18%,#10141f 45%,#050507 70%); }
+.status .sys { display:flex; gap:2.6px; align-items:center; }
+.status .sys svg { width:auto; height:8px; fill:currentColor; display:inline-block; }
+.batt { width:14px; height:7px; border:.9px solid currentColor; border-radius:2.2px; padding:.9px; opacity:.85; position:relative; }
+.batt::after { content:""; position:absolute; right:-2.4px; top:2px; width:1.3px; height:2.4px; border-radius:0 1px 1px 0; background:currentColor; opacity:.6; }
+.batt i { display:block; height:100%; width:80%; background:currentColor; border-radius:1px; }
+
+.home{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:33%;height:3px;border-radius:9px;background:var(--status-ink,#111);opacity:.55}
+
+/* studio toggles */
+.no-phone .phone{display:none}
+.no-phone .shots{grid-template-columns:1fr;grid-template-areas:"hero" "sec"}
+.no-section .sec{display:none}
+.no-section .shots{grid-template-rows:1fr}
+.no-section .hero img{aspect-ratio:auto;flex:1}
+.no-browser .bar{display:none}
+
+/* logo wall */
+.wall{padding:12mm 14mm;display:flex;flex-direction:column;gap:7mm}
+.wall-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:4mm}
+.wall-head h2{font-family:var(--title-font);font-weight:400;font-size:var(--h2);line-height:1}
+.wall-head p{font-size:var(--body-size);color:var(--mute)}
+.lt-grid{flex:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:5mm 5mm}
+.lt{display:flex;flex-direction:column;gap:2mm;min-height:0}
+.lt-box{flex:1;min-height:0;border-radius:6px;display:grid;place-items:center;padding:5mm 8mm;border:1px solid rgba(0,0,0,.07)}
+.lt-box img{max-width:100%;max-height:15mm;object-fit:contain}
+.lt-box img[src*='lagoon'],.lt-box img[src*='wordlord'],.lt-box img[src*='rivermont'],.lt-box img[src*='ppptex'],.lt-box img[src*='techlords'],.lt-box img[src*='beant']{max-height:21mm}
+.lt-box img[src$='pickkk.svg']{max-height:22mm}
+.wordmark{font:600 17px 'Instrument Sans',sans-serif;color:#fff;letter-spacing:-.01em}
+.lt-cap{display:flex;justify-content:space-between;gap:3mm;font:500 10px 'Instrument Sans',sans-serif;color:var(--mute);white-space:nowrap}
+.lt-cap b{color:var(--ink);font-weight:600}
+@page{size:A4 landscape;margin:0}
+@media print{body{background:none;padding:0}.noprint{display:none}.page{margin:0}}
+.lt-box img[src*='files/wordlord']{height:20mm;width:auto}
+
+.arr{width:9px;height:9px;display:block}
+.visit i{width:6.4mm;height:6.4mm}
+.visit i .arr{width:10px;height:10px}
+.lt-cap .lnk{display:inline-flex;align-items:center;gap:1.6mm}
+.lt-cap .lnk i{display:grid;place-items:center;width:4.2mm;height:4.2mm;border-radius:50%;border:1px solid currentColor;opacity:.75}
+.lt-cap .lnk i .arr{width:7px;height:7px}
+.lt:hover .lnk i{background:var(--cobalt);border-color:var(--cobalt);color:#fff;opacity:1}
+
+/* counter on one line: big number, small total beside it */
+.num{flex-direction:row!important;align-items:baseline!important;gap:1.6mm;white-space:nowrap}
+.num .mono{margin-top:0!important;font-size:12px;white-space:nowrap}
+
+
+.cover .mascot-laptop { position: absolute; right: -4mm; bottom: -20mm; height: 220mm; z-index: 2; pointer-events: none; }
+video.mascot-laptop { object-fit: contain; object-position: bottom right; }
+
+.cover .mascot-laptop-old { position: absolute; right: 12mm; bottom: 0; height: 165mm; z-index: 2; pointer-events: none; }
+.cover .cv-main { max-width: 135mm; }
+.strip { max-width: 155mm; z-index: 1; position: relative; }
+.end .mascot-peek2{position:absolute;right:22mm;bottom:0;width:150mm;z-index:1;}
+</style>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://portfolio.wordlordmedia.com/">
+  <meta name="description" content="Official portfolio of WordLord Media. 16 live verified client websites and platforms across real estate, manufacturing, hospitality, healthcare, and SaaS.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.wordlordmedia.com/">
+  <meta property="og:title" content="WordLord Media — Client Websites & Platforms Portfolio">
+  <meta property="og:description" content="16 verified live client sites engineered and launched by WordLord Media.">
+  <meta property="og:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-laptop-ref.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://portfolio.wordlordmedia.com/">
+  <meta name="twitter:title" content="WordLord Media — Client Websites & Platforms Portfolio">
+  <meta name="twitter:description" content="16 verified live client sites engineered and launched by WordLord Media.">
+  <meta name="twitter:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-laptop-ref.png">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wordlordmedia.com/#organization",
+        "name": "WordLord Media",
+        "url": "https://wordlordmedia.com",
+        "logo": "https://portfolio.wordlordmedia.com/assets/wl-logo.png",
+        "sameAs": [
+          "https://instagram.com/wordlordmedia",
+          "https://techlord.wordlordmedia.com"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-79735-75656",
+          "contactType": "customer service",
+          "email": "support@wordlordmedia.com"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://portfolio.wordlordmedia.com/#webpage",
+        "url": "https://portfolio.wordlordmedia.com/",
+        "name": "WordLord Media Client Platforms Portfolio",
+        "isPartOf": { "@id": "https://wordlordmedia.com/#organization" },
+        "description": "Portfolio of 16 live production websites and web platforms built by WordLord Media."
+      }
+    ]
+  }
+  </script>
+
+</head><body>
+<section class="page brand cover">
+  <video class="mascot-laptop" autoplay loop muted playsinline poster="assets/mascot/elephant-laptop-keyed.png">
+    <source src="assets/mascot/elephant-typing-keyed.webm" type="video/webm">
+    <source src="assets/mascot/elephant-typing.mp4" type="video/mp4">
+    <img src="assets/mascot/elephant-laptop-keyed.png" alt="WordLord Mascot">
+  </video>
+  <img class="logo big" src="assets/wl-logo.png" alt="WordLord Media">
+  <div class="cv-main">
+    <h1 contenteditable="true">Websites we designed<br>and built.</h1>
+    <p contenteditable="true">16 live sites for builders, restaurants, manufacturers, exporters and clinics. Every name links to the live site.</p></div>
+  <div class="strip"><img src="assets/shots/dhunna-desktop.jpg" alt=""><img src="assets/shots/counterly-desktop.jpg" alt=""><img src="assets/shots/shaaira-desktop.jpg" alt=""><img src="assets/shots/pindaura-desktop.jpg" alt=""></div>
+</section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="on">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>01</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Dhunna Infra</h2><p contenteditable="true">Real estate builders in Ludhiana, Punjab.</p></div>
+    <a class="visit" href="https://dhunnainfra.com"><span class="mono">Visit</span>dhunnainfra.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://dhunnainfra.com"><i></i><i></i><i></i><span>dhunnainfra.com</span></a><img src="assets/shots/dhunna-desktop.jpg" alt="Dhunna Infra home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/dhunna-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(10,10,10);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/dhunna-mobile.jpg" alt="Dhunna Infra on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="on">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>02</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Counterly</h2><p contenteditable="true">Practical business software for billing, products, receipts, teams and attendance.</p></div>
+    <a class="visit" href="https://counterly.co.in"><span class="mono">Visit</span>counterly.co.in<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://counterly.co.in"><i></i><i></i><i></i><span>counterly.co.in</span></a><img src="assets/shots/counterly-desktop.jpg" alt="Counterly home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/counterly-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(255,255,255);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/counterly-mobile.jpg" alt="Counterly on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="on">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>03</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Shaaira Biocare</h2><p contenteditable="true">Cosmeceutical and personal care contract manufacturing.</p></div>
+    <a class="visit" href="https://shaairabiocare.com"><span class="mono">Visit</span>shaairabiocare.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://shaairabiocare.com"><i></i><i></i><i></i><span>shaairabiocare.com</span></a><img src="assets/shots/shaaira-desktop.jpg" alt="Shaaira Biocare home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/shaaira-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(157,176,154);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/shaaira-mobile.jpg" alt="Shaaira Biocare on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="on">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>04</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">The Pindaura</h2><p contenteditable="true">Mughlai and North Indian restaurant in Sarabha Nagar, Ludhiana.</p></div>
+    <a class="visit" href="https://thepindaura.com"><span class="mono">Visit</span>thepindaura.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://thepindaura.com"><i></i><i></i><i></i><span>thepindaura.com</span></a><img src="assets/shots/pindaura-desktop.jpg" alt="The Pindaura home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/pindaura-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(227,227,217);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/pindaura-mobile.jpg" alt="The Pindaura on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="on">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>05</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">The Barn Fox</h2><p contenteditable="true">Microbrewery, kitchen and café.</p></div>
+    <a class="visit" href="https://thebarnfox.com"><span class="mono">Visit</span>thebarnfox.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://thebarnfox.com"><i></i><i></i><i></i><span>thebarnfox.com</span></a><img src="assets/shots/barnfox-desktop.jpg" alt="The Barn Fox home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/barnfox-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(17,43,42);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/barnfox-mobile.jpg" alt="The Barn Fox on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="on">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>06</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">BBN Caterers</h2><p contenteditable="true">Premium catering and heritage dining since 1991.</p></div>
+    <a class="visit" href="https://bbncaterers.com"><span class="mono">Visit</span>bbncaterers.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://bbncaterers.com"><i></i><i></i><i></i><span>bbncaterers.com</span></a><img src="assets/shots/bbn-desktop.jpg" alt="BBN Caterers home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/bbn-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(41,40,36);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/bbn-mobile.jpg" alt="BBN Caterers on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="on">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>07</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">The Ozasco</h2><p contenteditable="true">Premium café and specialty coffee shop in Ludhiana.</p></div>
+    <a class="visit" href="https://theozasco.com"><span class="mono">Visit</span>theozasco.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://theozasco.com"><i></i><i></i><i></i><span>theozasco.com</span></a><img src="assets/shots/ozasco-desktop.jpg" alt="The Ozasco home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/ozasco-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(54,52,48);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/ozasco-mobile.jpg" alt="The Ozasco on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="on">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>08</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Shredfarmer&#x27;s Cafe</h2><p contenteditable="true">High-protein food in BRS Nagar, Ludhiana.</p></div>
+    <a class="visit" href="https://shredfarmer.com"><span class="mono">Visit</span>shredfarmer.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://shredfarmer.com"><i></i><i></i><i></i><span>shredfarmer.com</span></a><img src="assets/shots/shredfarmer-desktop.jpg" alt="Shredfarmer&#x27;s Cafe home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/shredfarmer-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(247,243,234);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/shredfarmer-mobile.jpg" alt="Shredfarmer&#x27;s Cafe on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="on">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>09</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Pickkk 4 Lickk</h2><p contenteditable="true">Fast food in Ludhiana, now in South City.</p></div>
+    <a class="visit" href="https://pickkk4lickk.com"><span class="mono">Visit</span>pickkk4lickk.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://pickkk4lickk.com"><i></i><i></i><i></i><span>pickkk4lickk.com</span></a><img src="assets/shots/pickkk-desktop.jpg" alt="Pickkk 4 Lickk home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/pickkk-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(227,11,26);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/pickkk-mobile.jpg" alt="Pickkk 4 Lickk on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="on">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>10</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Lagoon Street</h2><p contenteditable="true">A shopping, dining and leisure street in Ludhiana.</p></div>
+    <a class="visit" href="https://lagoonstreet.in"><span class="mono">Visit</span>lagoonstreet.in<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://lagoonstreet.in"><i></i><i></i><i></i><span>lagoonstreet.in</span></a><img src="assets/shots/lagoon-desktop.jpg" alt="Lagoon Street home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/lagoon-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(3,3,3);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/lagoon-mobile.jpg" alt="Lagoon Street on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="on">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>11</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Beant Export</h2><p contenteditable="true">Exporter of recycled plastic, metal and rubber scrap.</p></div>
+    <a class="visit" href="https://beantexport.com"><span class="mono">Visit</span>beantexport.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://beantexport.com"><i></i><i></i><i></i><span>beantexport.com</span></a><img src="assets/shots/beant-desktop.jpg" alt="Beant Export home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/beant-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(214,221,231);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/beant-mobile.jpg" alt="Beant Export on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="on">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>12</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">People Products Places</h2><p contenteditable="true">US-based merchandising and global sourcing of home textiles and apparel.</p></div>
+    <a class="visit" href="https://ppptex.com"><span class="mono">Visit</span>ppptex.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://ppptex.com"><i></i><i></i><i></i><span>ppptex.com</span></a><img src="assets/shots/ppptex-desktop.jpg" alt="People Products Places home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/ppptex-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(157,156,149);--status-ink:#111"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/ppptex-mobile.jpg" alt="People Products Places on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="on">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>13</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">GS Builders</h2><p contenteditable="true">Construction and structural engineering in Ludhiana since 2000.</p></div>
+    <a class="visit" href="https://gsbuilders.co"><span class="mono">Visit</span>gsbuilders.co<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://gsbuilders.co"><i></i><i></i><i></i><span>gsbuilders.co</span></a><img src="assets/shots/gsbuilders-desktop.jpg" alt="GS Builders home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/gsbuilders-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(11,11,11);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/gsbuilders-mobile.jpg" alt="GS Builders on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="on">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>14</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Rivermont Dental Centre</h2><p contenteditable="true">Dentist in Brampton, Ontario.</p></div>
+    <a class="visit" href="https://rivermontdentistry.com"><span class="mono">Visit</span>rivermontdentistry.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://rivermontdentistry.com"><i></i><i></i><i></i><span>rivermontdentistry.com</span></a><img src="assets/shots/rivermont-desktop.jpg" alt="Rivermont Dental Centre home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/rivermont-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(106,133,160);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/rivermont-mobile.jpg" alt="Rivermont Dental Centre on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="on">Tech Lords</li><li class="">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>15</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">Tech Lords</h2><p contenteditable="true">Free templates, checklists and links.</p></div>
+    <a class="visit" href="https://techlord.wordlordmedia.com"><span class="mono">Visit</span>techlord.wordlordmedia.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://techlord.wordlordmedia.com"><i></i><i></i><i></i><span>techlord.wordlordmedia.com</span></a><img src="assets/shots/techlords-desktop.jpg" alt="Tech Lords home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/techlords-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(22,22,24);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/techlords-mobile.jpg" alt="Tech Lords on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page site"><aside class="side"><img class="logo" src="assets/wl-logo.png" alt="WordLord Media">
+<ol class="idx"><li class="">Dhunna Infra</li><li class="">Counterly</li><li class="">Shaaira Biocare</li><li class="">The Pindaura</li><li class="">The Barn Fox</li><li class="">BBN Caterers</li><li class="">The Ozasco</li><li class="">Shredfarmer&#x27;s Cafe</li><li class="">Pickkk 4 Lickk</li><li class="">Lagoon Street</li><li class="">Beant Export</li><li class="">People Products Places</li><li class="">GS Builders</li><li class="">Rivermont Dental Centre</li><li class="">Tech Lords</li><li class="on">WordLord Media</li></ol><div class="foot mono">wordlordmedia.com</div></aside>
+<main>
+  <header class="head">
+    <div class="num"><b>16</b><span class="mono">/ 16</span></div>
+    <div class="who"><h2 contenteditable="true">WordLord Media</h2><p contenteditable="true">Digital marketing agency in Ludhiana.</p></div>
+    <a class="visit" href="https://wordlordmedia.com"><span class="mono">Visit</span>wordlordmedia.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+  </header>
+  <div class="shots">
+    <figure class="hero shot"><a class="bar" href="https://wordlordmedia.com"><i></i><i></i><i></i><span>wordlordmedia.com</span></a><img src="assets/shots/wordlord-desktop.jpg" alt="WordLord Media home page"></figure>
+    <figure class="sec shot"><img src="assets/shots/wordlord-section.jpg" alt=""></figure>
+    <figure class="phone" style="--status-bg:rgb(4,4,4);--status-ink:#fff"><div class="screen">
+      <div class="status"><span class="time">9:41</span><span class="island"></span><span class="sys"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM2.9 6.3a7.3 7.3 0 0 1 10.2 0l-1.4 1.4a5.3 5.3 0 0 0-7.4 0zM.2 3.6a11 11 0 0 1 15.6 0l-1.4 1.4a9 9 0 0 0-12.8 0z"/></svg><span class="batt"><i></i></span></span></div>
+      <img src="assets/shots/wordlord-mobile.jpg" alt="WordLord Media on a phone"><span class="home"></span></div></figure>
+  </div>
+</main></section><section class="page wall">
+<header class="wall-head"><h2 contenteditable="true">The brands behind these sites</h2><p contenteditable="true">Every logo opens its live site. Checked 11 Nov 2026.</p></header>
+<div class="lt-grid"><a class="lt" href="https://dhunnainfra.com"><span class="lt-box" style="background:rgba(10, 10, 10, 0.82)"><img src="assets/logos/files/dhunna.png" alt="Dhunna Infra logo"></span>
+  <span class="lt-cap"><b>Dhunna Infra</b><span class="lnk">dhunnainfra.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://counterly.co.in"><span class="lt-box" style="background:rgb(255, 255, 255)"><img src="assets/logos/files/counterly.png" alt="Counterly logo"></span>
+  <span class="lt-cap"><b>Counterly</b><span class="lnk">counterly.co.in<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://shaairabiocare.com"><span class="lt-box" style="background:rgb(247, 242, 231)"><img src="assets/logos/files/shaaira.png" alt="Shaaira Biocare logo"></span>
+  <span class="lt-cap"><b>Shaaira Biocare</b><span class="lnk">shaairabiocare.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://thepindaura.com"><span class="lt-box" style="background:rgb(38, 30, 26)"><img src="assets/logos/files/pindaura.png" alt="The Pindaura logo"></span>
+  <span class="lt-cap"><b>The Pindaura</b><span class="lnk">thepindaura.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://thebarnfox.com"><span class="lt-box" style="background:rgb(16, 43, 42)"><img src="assets/logos/files/barnfox.png" alt="The Barn Fox logo"></span>
+  <span class="lt-cap"><b>The Barn Fox</b><span class="lnk">thebarnfox.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://bbncaterers.com"><span class="lt-box" style="background:rgb(43,41,37)"><img src="assets/logos/files/bbn.webp" alt="BBN Caterers logo"></span>
+  <span class="lt-cap"><b>BBN Caterers</b><span class="lnk">bbncaterers.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://theozasco.com"><span class="lt-box" style="background:rgb(250, 248, 245)"><img src="assets/logos/files/ozasco.png" alt="The Ozasco logo"></span>
+  <span class="lt-cap"><b>The Ozasco</b><span class="lnk">theozasco.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://shredfarmer.com"><span class="lt-box" style="background:color(srgb 0.964706 0.952941 0.921569 / 0.93)"><img src="assets/logos/files/shredfarmer.svg" alt="Shredfarmer&#x27;s Cafe logo"></span>
+  <span class="lt-cap"><b>Shredfarmer&#x27;s Cafe</b><span class="lnk">shredfarmer.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://pickkk4lickk.com"><span class="lt-box" style="background:rgb(227,10,26)"><img src="assets/logos/files/pickkk.svg" alt="Pickkk 4 Lickk logo"></span>
+  <span class="lt-cap"><b>Pickkk 4 Lickk</b><span class="lnk">pickkk4lickk.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://lagoonstreet.in"><span class="lt-box" style="background:rgb(0,0,0)"><img src="assets/logos/files/lagoon.png" alt="Lagoon Street logo"></span>
+  <span class="lt-cap"><b>Lagoon Street</b><span class="lnk">lagoonstreet.in<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://beantexport.com"><span class="lt-box" style="background:rgb(255, 255, 255)"><img src="assets/logos/files/beant.png" alt="Beant Export logo"></span>
+  <span class="lt-cap"><b>Beant Export</b><span class="lnk">beantexport.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://ppptex.com"><span class="lt-box" style="background:rgb(255,255,255)"><img src="assets/logos/files/ppptex.png" alt="People Products Places logo"></span>
+  <span class="lt-cap"><b>People Products Places</b><span class="lnk">ppptex.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://gsbuilders.co"><span class="lt-box" style="background:rgb(243,239,230)"><img src="assets/logos/files/gsbuilders.svg" alt="GS Builders logo"></span>
+  <span class="lt-cap"><b>GS Builders</b><span class="lnk">gsbuilders.co<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://rivermontdentistry.com"><span class="lt-box" style="background:rgb(255, 255, 255)"><img src="assets/logos/files/rivermont.png" alt="Rivermont Dental Centre logo"></span>
+  <span class="lt-cap"><b>Rivermont Dental Centre</b><span class="lnk">rivermontdentistry.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://techlord.wordlordmedia.com"><span class="lt-box" style="background:rgb(22, 22, 24)"><img src="assets/logos/files/techlords.svg" alt="Tech Lords logo"></span>
+  <span class="lt-cap"><b>Tech Lords</b><span class="lnk">techlord.wordlordmedia.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a><a class="lt" href="https://wordlordmedia.com"><span class="lt-box" style="background:rgb(7, 7, 8)"><img src="assets/logos/files/wordlord.svg" alt="WordLord Media logo"></span>
+  <span class="lt-cap"><b>WordLord Media</b><span class="lnk">wordlordmedia.com<i><svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span></span></a></div></section><section class="page brand end">
+  <img class="mascot-peek2" src="assets/mascot/elephant-peek-clean.png" alt="WordLord Mascot">
+  <img class="logo big" src="assets/wl-logo.png" alt="WordLord Media">
+  <div class="cv-main"><h1 contenteditable="true">Next one could be yours.</h1>
+  <dl class="contact"><div><dt class="mono">Web</dt><dd><a href="https://wordlordmedia.com">wordlordmedia.com</a></dd></div>
+  <div><dt class="mono">Phone</dt><dd><a href="tel:+917973575656">+91 79735 75656</a></dd></div>
+  <div><dt class="mono">Email</dt><dd><a href="mailto:support@wordlordmedia.com">support@wordlordmedia.com</a></dd></div>
+  <div><dt class="mono">Instagram</dt><dd><a href="https://instagram.com/wordlordmedia">@wordlordmedia</a></dd></div></dl></div>
+</section><script src="studio.js"></script></body></html>
