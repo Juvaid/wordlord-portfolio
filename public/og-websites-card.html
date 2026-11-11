@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WordLord Media — Websites Portfolio OG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: 'Geist', -apple-system, sans-serif;
+      background: #1E3FD8;
+    }
+    .og-card {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      background: radial-gradient(circle at 72% 52%, #2a52f5 0%, #1E3FD8 50%, #10268e 100%);
+      color: #ffffff;
+      padding: 56px 64px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .og-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.45;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 0.8px, transparent 0.9px);
+      background-size: 3.5px 3.5px;
+    }
+    
+    /* Header */
+    .og-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .og-logo {
+      height: 38px;
+      width: auto;
+    }
+    .og-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .og-badge {
+      padding: 5px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    /* Main editorial section */
+    .og-body {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin-top: 20px;
+    }
+    .og-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: 68px;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .og-sub {
+      font-size: 18.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 580px;
+      margin-bottom: 24px;
+    }
+
+    /* Thumbnail strip of verified live sites */
+    .og-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 580px;
+    }
+    .og-shot {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 14px 28px -10px rgba(0, 10, 40, 0.6);
+      aspect-ratio: 16 / 10;
+      background: #000;
+    }
+    .og-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Footer info */
+    .og-foot {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.75);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 18px;
+      max-width: 650px;
+    }
+    .og-foot-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .og-foot-item b {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Mascot grounding on the right */
+    .mascot-wrap {
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      height: 550px;
+      width: 480px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .mascot-ground-shadow {
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      width: 420px;
+      height: 28px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(5, 12, 45, 0.65) 0%, rgba(5, 12, 45, 0.25) 50%, transparent 75%);
+      filter: blur(5px);
+    }
+    .mascot-img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: bottom right;
+      filter: drop-shadow(0 14px 25px rgba(0, 15, 60, 0.3)) drop-shadow(0 30px 50px rgba(0, 10, 40, 0.4));
+    }
+  </style>
+</head>
+<body>
+  <div class="og-card">
+    <header class="og-head">
+      <img src="assets/wl-logo.png" alt="WordLord Media" class="og-logo">
+      <div class="og-meta">
+        <span>DOCUMENT DISPATCH · VOL. 2026</span>
+        <span class="og-badge">16 VERIFIED LIVE SITES</span>
+      </div>
+    </header>
+
+    <div class="og-body">
+      <h1 class="og-title">Websites we designed<br>and built.</h1>
+      <p class="og-sub">16 live verified client production systems across real estate, industrial export, healthcare, and SaaS.</p>
+      
+      <div class="og-strip">
+        <div class="og-shot"><img src="assets/shots/dhunna-desktop.jpg" alt="Dhunna Infra"></div>
+        <div class="og-shot"><img src="assets/shots/counterly-desktop.jpg" alt="Counterly"></div>
+        <div class="og-shot"><img src="assets/shots/shaaira-desktop.jpg" alt="Shaaira Biocare"></div>
+        <div class="og-shot"><img src="assets/shots/pindaura-desktop.jpg" alt="The Pindaura"></div>
+      </div>
+    </div>
+
+    <footer class="og-foot">
+      <div class="og-foot-item">
+        <span>Book Strategy Call:</span>
+        <b>calendar.wordlordmedia.com</b>
+      </div>
+      <div class="og-foot-item">
+        <span>HQ:</span>
+        <b>Ludhiana &amp; Global</b>
+      </div>
+    </footer>
+
+    <div class="mascot-wrap">
+      <div class="mascot-ground-shadow"></div>
+      <img src="assets/mascot/elephant-laptop-grounded.png" alt="WordLord Elephant Mascot" class="mascot-img">
+    </div>
+  </div>
+</body>
+</html>
