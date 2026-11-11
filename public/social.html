@@ -181,24 +181,129 @@ a{color:inherit;text-decoration:none}
 
 .cover .mascot{height:178mm;right:14mm;bottom:-2mm}
 .end .mascot-peek2{position:absolute;right:22mm;bottom:0;width:150mm;z-index:1}
+
+/* ==========================================================================
+   MOBILE FIRST & RESPONSIVE SOCIAL PORTFOLIO (WordLord Media)
+   ========================================================================== */
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #ddd6c8;
+  color: #16161a;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: 600 11.5px 'Instrument Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-share:hover {
+  border-color: #1E3FD8;
+  color: #1E3FD8;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    padding: 0 !important;
+    background: #0d0e14 !important;
+  }
+  .page {
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 0 20px 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+  .cover {
+    padding: 32px 18px 24px !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 18px !important;
+  }
+  .cover .cv { max-width: 100% !important; }
+  .cover h1 {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    margin: 14px 0 10px !important;
+  }
+  .cover .mascot {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 240px !important;
+    height: 240px !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 8px auto 0 !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+  .cover .stats {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+  
+  .wall { padding: 28px 14px !important; }
+  .wall-head { flex-direction: column !important; gap: 6px !important; }
+  .acctpage { padding: 24px 14px !important; }
+  .acct {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .acct .top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .acct .left {
+    width: 100% !important;
+  }
+  .acct .reels {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .end {
+    padding: 36px 18px !important;
+    min-height: auto !important;
+  }
+  .end .contact {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .end .mascot-peek2 { display: none !important; }
+}
+
 </style>
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://portfolio.wordlordmedia.com/">
-  <meta name="description" content="Official portfolio of WordLord Media. 16 live verified client websites and platforms across real estate, manufacturing, hospitality, healthcare, and SaaS.">
+  <link rel="canonical" href="https://portfolio.wordlordmedia.com/social">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://portfolio.wordlordmedia.com/sitemap.xml">
+  <meta name="description" content="Official portfolio of WordLord Media. 20 managed client social accounts, 464K peak single-reel reach, 13 reels past 100K views. Authentic performance and growth.">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portfolio.wordlordmedia.com/">
-  <meta property="og:title" content="WordLord Media — Client Websites & Platforms Portfolio">
-  <meta property="og:description" content="16 verified live client sites engineered and launched by WordLord Media.">
-  <meta property="og:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-laptop-ref.png">
+  <meta property="og:url" content="https://portfolio.wordlordmedia.com/social">
+  <meta property="og:title" content="WordLord Media — Social Media &amp; Distribution Portfolio">
+  <meta property="og:description" content="20 managed client social accounts, 464K peak single-reel reach, 13 reels past 100K views. Engineered and managed by WordLord Media.">
+  <meta property="og:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-phone.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://portfolio.wordlordmedia.com/">
-  <meta name="twitter:title" content="WordLord Media — Client Websites & Platforms Portfolio">
-  <meta name="twitter:description" content="16 verified live client sites engineered and launched by WordLord Media.">
-  <meta name="twitter:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-laptop-ref.png">
+  <meta name="twitter:url" content="https://portfolio.wordlordmedia.com/social">
+  <meta name="twitter:title" content="WordLord Media — Social Media &amp; Distribution Portfolio">
+  <meta name="twitter:description" content="20 managed client social accounts, 464K peak single-reel reach, 13 reels past 100K views. Engineered and managed by WordLord Media.">
+  <meta name="twitter:image" content="https://portfolio.wordlordmedia.com/assets/mascot/elephant-phone.png">
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -224,11 +329,11 @@ a{color:inherit;text-decoration:none}
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://portfolio.wordlordmedia.com/#webpage",
-        "url": "https://portfolio.wordlordmedia.com/",
-        "name": "WordLord Media Client Platforms Portfolio",
+        "@id": "https://portfolio.wordlordmedia.com/social#webpage",
+        "url": "https://portfolio.wordlordmedia.com/social",
+        "name": "WordLord Media Social Media & Distribution Portfolio",
         "isPartOf": { "@id": "https://wordlordmedia.com/#organization" },
-        "description": "Portfolio of 16 live production websites and web platforms built by WordLord Media."
+        "description": "Portfolio of 20 managed client social media accounts with verified reach and virality metrics by WordLord Media."
       }
     ]
   }
@@ -241,7 +346,7 @@ a{color:inherit;text-decoration:none}
 <div class="stats-cover"><div class="stat"><b>464K</b><span>views on a single reel</span></div>
 <div class="stat"><b>13</b><span>reels past 100K views</span></div>
 <div class="stat"><b>20</b><span>Instagram accounts we run</span></div></div></div>
-<p class="note mono">Public play counts read from each profile on 11 Nov 2026.</p></section><section class="page"><header class="wall-head"><h2 contenteditable="true">Every account we run</h2><p class="mono">Views on the latest 20 reels per account</p></header>
+<p class="note mono">Public play counts read from each profile on 11 Nov 2026.</p></section><section class="page" id="all-accounts"><header class="wall-head"><h2 contenteditable="true">Every account we run</h2><p class="mono">Views on the latest 20 reels per account</p></header>
 <div class="cards"><div class="card hot"><span class="av"><img src="assets/social/pfp/ozasco.in.jpg" alt=""></span><span class="h">@ozasco.in</span>
 <b>1.01M</b><span class="s">views, latest reels</span><span class="s2">Best reel 350K · 1.7K followers</span></div><div class="card hot"><span class="av"><img src="assets/social/pfp/pindauraindia.jpg" alt=""></span><span class="h">@pindauraindia</span>
 <b>941.1K</b><span class="s">views, latest reels</span><span class="s2">Best reel 464K · 3.2K followers</span></div><div class="card hot"><span class="av"><img src="assets/social/pfp/vaasii.in.jpg" alt=""></span><span class="h">@vaasii.in</span>
@@ -380,8 +485,11 @@ a{color:inherit;text-decoration:none}
 
     <div class="wl-ticket">
       <header class="wl-ticket-head">
-        <img src="assets/wl-logo-cobalt.png" alt="WordLord Media" class="wl-tk-logo">
-        <span class="wl-tk-series">PORTFOLIO INDEX · 2026</span>
+        <div class="wl-ticket-brand-group">
+          <img src="assets/wl-logo-cobalt.png" alt="WordLord Media" class="wl-tk-logo">
+          <span class="wl-tk-divider"></span>
+          <span class="wl-tk-series">PORTFOLIO · 2026</span>
+        </div>
       </header>
 
       <div class="wl-ticket-body">
@@ -461,15 +569,24 @@ a{color:inherit;text-decoration:none}
   border-top: 4px solid #1E3FD8;
 }
 .wl-ticket-head {
-  padding: 16px 22px;
+  padding: 14px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e5ded0;
   background: #eee7da;
 }
+.wl-ticket-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wl-tk-divider {
+  width: 1px;
+  height: 14px;
+  background: #d4cbba;
+}
 .wl-tk-logo {
-  height: 24px;
+  height: 22px;
   width: auto;
   display: block;
 }
@@ -578,6 +695,28 @@ document.addEventListener("DOMContentLoaded", function() {
       overlay.style.display = "none";
     });
   }
+});
+</script>
+
+
+<script>
+// One-Click Share
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-share').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const hash = btn.dataset.share;
+      const fullUrl = window.location.origin + window.location.pathname + hash;
+      try {
+        await navigator.clipboard.writeText(fullUrl);
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>Copied! ✓</span>';
+        setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+      } catch (err) {
+        prompt('Share link:', fullUrl);
+      }
+    });
+  });
 });
 </script>
 
