@@ -116,8 +116,30 @@ a{color:inherit;text-decoration:none}
 .num .mono{margin-top:0!important;font-size:12px;white-space:nowrap}
 
 
-.cover .mascot-laptop { position: absolute; right: -4mm; bottom: -20mm; height: 220mm; z-index: 2; pointer-events: none; }
+.cover { background: radial-gradient(circle at 75% 55%, #2a52f5 0%, #1E3FD8 45%, #132a9e 100%) !important; }
+.cover .mascot-laptop {
+  position: absolute;
+  right: -4mm;
+  bottom: -20mm;
+  height: 220mm;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 15px rgba(0, 15, 60, 0.2)) drop-shadow(0 25px 40px rgba(0, 10, 40, 0.35));
+}
 video.mascot-laptop { object-fit: contain; object-position: bottom right; }
+
+/* Ground plane shadow under the desk and stool */
+.mascot-shadow {
+  position: absolute;
+  bottom: 0;
+  right: 10mm;
+  width: 140mm;
+  height: 18mm;
+  background: radial-gradient(ellipse at 50% 50%, rgba(5, 12, 45, 0.55) 0%, rgba(5, 12, 45, 0.2) 50%, transparent 75%);
+  filter: blur(4px);
+  pointer-events: none;
+  z-index: 1;
+}
 
 .cover .mascot-laptop-old { position: absolute; right: 12mm; bottom: 0; height: 165mm; z-index: 2; pointer-events: none; }
 .cover .cv-main { max-width: 135mm; }
@@ -454,6 +476,7 @@ video.mascot-laptop { object-fit: contain; object-position: bottom right; }
     <source src="assets/mascot/elephant-typing.mp4" type="video/mp4">
     <img src="assets/mascot/elephant-laptop-keyed.png" alt="WordLord Mascot">
   </video>
+  <div class="mascot-shadow"></div>
   <img class="logo big" src="assets/wl-logo.png" alt="WordLord Media">
   <div class="cv-main">
     <h1 contenteditable="true">Websites we designed<br>and built.</h1>
